@@ -13,7 +13,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Build server
-        run: ./test/build.sh
+        run: ./script/build.sh
   test:
     needs: build
     runs-on: ubuntu-latest
