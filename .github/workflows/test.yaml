@@ -12,10 +12,13 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Build server
+      - name: Build
         run: ./script/build.sh
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: ./script/test.sh
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Test
+        run: ./script/test.sh
